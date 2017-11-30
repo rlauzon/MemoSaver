@@ -36,54 +36,89 @@ You enter the Text application on the M100/102 and type in a text file.
 The first line of the text file needs to be a MemoSaver marker - ## - followed by a command.
 
 Commands:
+
  ##Save <filename>
+ 
  ##Load <filename>
+ 
  ##List
+ 
  ##Del <filename>
 
 "Save" will save the text file to the SD card on the Arduino, status will be sent the next time the button is pressed.
+
 "Load" will tell the Arduino to send the file the next time the button is pressed.
+
 "List" will send a list of files on the Arduino when the button is pressed.
+
 "Del" will delete a file on the SD card.  Status will be returned the next time the button is pressed.
 
 Results are *not* stacked.  If you send a "Del" command, then send a "List" command, the results of the "Del" command are lost.
 
 Example 1:
 Go into Text and start a new text file.  Call it whatever you want.
+
 Enter this text:
+
  ##List<press enter>
+ 
 Press F3 (Save) and for the file name use "com:58n1e"
+
 Press F2 (Load) and for the file name, again use "com:58n1e"
+
 Press the button on the Arduino side to tell it to start sending.
+
 The list of files on the SD card will be loaded into the current text file.
+
 The file names will be listed along with their size in bytes.
 
 Example 2:
+
 Go into Text and start a new text file.  Call it whatever you want.
+
 Enter this text:
- ##load file1.dat<press enter>
+
+##load file1.dat<press enter>
+
 Press F3 (Save) and for the file name use "com:58n1e"
+
 Press F2 (Load) and for the file name, again use "com:58n1e"
+
 Press the button on the Arduino side to tell it to start sending.
+
 The contents of file1.dat from the SD card will be loaded into the current text file.
 
 Example 3:
+
 Create a new text file with some content, or use a current text file.
+
 Enter this text AS THE FIRST LINE OF THE text file:
- ##save newfile.dat<press enter>
+
+##save newfile.dat<press enter>
+
 Press F3 (Save) and for the file name use "com:58n1e"
 
 Optionally, you can press F2 (Load) and for the file name, again use "com:58n1e"
+
 Press the button on the Arduino side to tell it to start sending.
+
 The results of the save operation will be loaded in to the current text file.
 
 Example 4:
+
 Go into Text and start a new text file.  Call it whatever you want.
+
 Enter this text:
- ##del file1.dat<press enter>
+
+##del file1.dat<press enter>
+
 Press F3 (Save) and for the file name use "com:58n1e"
+
 Press F2 (Load) and for the file name, again use "com:58n1e"
+
 Press the button on the Arduino side to tell it to start sending.
+
 The results of the delete operation will be loaded into the current text file.
+
 
 In case you didn't see, the speed is limited to 1200 BPS.  I tried higher BPS but something would stop the transmission from the 100/102 side after about 80 bytes.  Lowering the speed to 1200 BPS was the only way to fix it.
