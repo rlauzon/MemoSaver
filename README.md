@@ -13,8 +13,8 @@ This shifter worked nice and did the hardware flow control cross over for me, so
 Arduino pins used:
 * 7, Gnd - Drive activity light
 * A6, Gnd - Boot monentary switch
-* 62 (A8) - Shifter TX
-* 63 (A9) - Shifter RX
+* 18 - Shifter TX
+* 19 - Shifter RX
 * SPI header for SD shield
 
 Unavailable pins:
@@ -24,10 +24,6 @@ Unavailable pins:
 
 Notes:
 The Mega puts the SPI pins on 50-53 instead of 10-13.  So you need to solder the SPI header to the MicroSD Shield in order to move the pins.  As a result, pins 50-53 on the Mega are unavailable.  Also, because of how the MicroSD Shield is made, pins 10-13 are unavailable as well - if you use the stacking headers.  You can probably get around this by not using the stacking headers for pins D8-D13 and connecting stuff directly to the Mega and not through the MicroSD Shield.
-
-Not all pins on the Mega and Mega 2560 support change interrupts, so only the following can be used for RX:
-10, 11, 12, 13, 50, 51, 52, 53, 62, 63, 64, 65, 66, 67, 68, 69
-So, since 10-13 and 50-53 are unavailable, I had to put the shifter on pins 62 and 63.
 
 # Software explanation
 
