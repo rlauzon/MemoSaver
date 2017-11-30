@@ -35,11 +35,13 @@ You enter the Text application on the M100/102 and type in a text file.
 
 The first line of the text file needs to be a MemoSaver marker - ## - followed by a command.
 
-`Commands:`
-`##Save <filename>`
-`##Load <filename>`
-`##List`
-`##Del <filename>`
+~~~~
+Commands:
+##Save <filename>
+##Load <filename>
+##List
+##Del <filename>
+~~~~
 
 * "Save" will save the text file to the SD card on the Arduino, status will be sent the next time the button is pressed.
 * "Load" will tell the Arduino to send the file the next time the button is pressed.
